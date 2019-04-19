@@ -1,0 +1,13 @@
+<% include ../partials/header %>
+
+    <div class="form-liq" style="width: 25%;">
+      <h4 style="text-align: center; margin-bottom: 40px;">Review <%= product.name %></h4>
+      <form class="register-form" action="/products/<%= product._id %>/reviews" method="POST">
+        <input class="form-control" type="text" name="review[text]" placeholder="Ex: it is very cool">
+        <button style="background-color: #006E90;">Post Review</button>
+      </form>
+      <a href="/products" >Go Back</a>
+    </div>
+
+<% include ../partials/footer %>
+

@@ -1,0 +1,12 @@
+<% include ./partials/header %>
+    <div class="form-liq">
+      <div class="thumbnail-liq-login"><img src="res/login.png"/></div>
+      <form class="login-form" action="/login" method="post">
+        <input type="email" name="username" placeholder="username"/>
+        <input type="password" name="password" placeholder="password"/>
+        <button class="login-btn">login</button>
+        <p class="message-login">Not registered? <a href="/register">Create an account</a></p>
+      </form>
+    </div>
+<% include ./partials/footer %>
+

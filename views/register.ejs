@@ -1,0 +1,19 @@
+<% include ./partials/header %>
+
+    <div class="form-liq">
+      <div class="thumbnail-liq-signup"><img src="res/signup.png"/></div>
+      <form class="register-form" action="/register" method="post">
+        <input type="text" name="fullname" placeholder="name"/>
+        <input type="email" name="username" placeholder="email address"/>
+        <input type="password" name="password" placeholder="password"/>
+        <div class="container-liq-radio">
+          <input type="radio" name="acType" value="user"> <span>User</span>
+          <input type="radio" name="acType" value="merchant"><span>Merchant</span>
+        </div>
+        <button class="signup-btn">create</button>
+        <p class="message-signup">Already registered? <a href="/login">Sign In</a></p>
+      </form>
+    </div>
+
+<% include ./partials/footer %>
+

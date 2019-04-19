@@ -1,0 +1,401 @@
+html {
+  position: relative;
+  min-height: 100%;
+}
+body {
+  margin-bottom: 60px;
+  background: #f1f3f6;
+  overflow-x: hidden;
+}
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 60px;
+  background-color: #f5f5f5;
+}
+
+.container .text-muted {
+  margin: 20px 0;
+}
+.thumbnail .caption-full {
+    padding: 9px;
+}
+.card .thumbnail {
+    margin: 12px 0;
+    padding: 0;
+    overflow: hidden;
+}
+.card .thumbnail img {
+  margin-top: 4px;
+  height: 140px;
+  transition: 0.7s;
+}
+.card .thumbnail:hover img {
+  transform: scale(1.1);
+}
+.small-green-text {
+  text-decoration: none !important;
+  font-size: 14px;
+  color: green;
+}
+.small-grey-text {
+  text-decoration: none !important;
+  font-size: 14px;
+  color: #878682;
+}
+
+.delete-form {
+	display: inline-block;
+}
+
+.flex-wrap {
+  display:flex;
+  flex-wrap: wrap;
+}
+
+/*>>>>>>>>>>>>GLOBAL CLASSES<<<<<<<<<<<<<<<<<<<<<*/
+.btn-primary {
+  background-color: #08C931;
+  border: none;
+}
+
+.well {
+  margin-bottom: 7px;
+}
+.btn-success {
+  background-color: #3AE84B;
+  border: 1px solid #3AE84B;
+}
+.btn-warning {
+  background-color: #FC8207;
+  border: 1px solid #FC8207;
+  color: white !important;
+}
+.btn-warning:hover {
+  color: #FC8207 !important;
+}
+.col-md-2 {
+  height: 220px; 
+}
+
+.log-button {
+  border: 1px solid #ccc;
+  font-size: 18px;
+  padding: 0 15px;
+  border-radius: 8px;
+}
+
+.container-liq {
+  padding: 10px 20px 10px 30px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-content: center;
+  background-color: center;
+}
+.cont-liq-title {
+  margin: 10px 0;
+}
+.cont-liq-title span {
+  line-height: 30px;
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.cont-liq-title a {
+  float: right;
+}
+
+#product-grid {
+  background: #ffffff;
+  border-radius: 4px;
+}
+#after-hide {
+  display: none;
+}
+
+/*>>>>>>>>>>>>>>>>>>>>>LOADER<<<<<<<<<<<<<<<<<<<<*/
+.loader {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  left: 50%;
+  top: 50%;
+}
+.circle {
+  height: 25px;
+  width: 25px;
+  border: inherit solid;
+  border-radius: 50%;
+  list-style-type: none;
+  margin: 2px;
+}
+.circle:nth-child(2) {
+  top: -30%;
+  position: relative;
+  left: -15px;
+  background: #db0051;
+  animation: positionChange2 9s infinite;
+  animation-delay: 0;
+}
+.circle:first-child {
+  background-color: #00a0ff;
+  animation: positionChange 9s infinite;
+}
+.circle:last-child {
+  background-color: #1a0d38;
+  position: relative;
+  top: -28px;
+  left: 15px;
+  transform-origin: top left;
+  animation: positionchange3 9s infinite;
+  animation-delay: 0s;
+}
+@keyframes positionChange {
+  0%,
+  100% {
+    transform: translate(0%, 0%);
+  }
+  16.5%,
+  50%,
+  82% {
+    transform: translate(0%, 55%);
+  }
+
+  33% {
+    transform: translate(64%, 108%);
+  }
+  57% {
+    transform: translate(-64%, 108%);
+  }
+}
+@keyframes positionChange2 {
+  0%,
+  100% {
+    transform: translate(0%, 0%);
+  }
+  16.5%,
+  50%,
+  82% {
+    transform: translate(60%, -50%);
+  }
+  33% {
+    transform: translate(60%, -108%);
+  }
+  57% {
+    transform: translate(120%, 0%);
+  }
+}
+@keyframes positionchange3 {
+  0%,
+  100% {
+    transform: translate(0%, 0%);
+  }
+  16.5%,
+  50%,
+  82% {
+    transform: translate(-60%, -40%);
+  }
+  33% {
+    transform: translate(-118%, 0%);
+  }
+  57% {
+    transform: translate(-60%, -100%);
+  }
+}
+
+/*>>>>>>>>>>>>>>>>>>POST LOADER<<<<<<<<<<<<<<*/
+.postload-content {
+  overflow-x: none;
+  display: none;
+}
+
+#navbar-liquidOne {
+  margin-bottom: 0; 
+}
+
+#home-icon {
+  font-size: 20px;
+  color: #FC8207;
+}
+.container-product-search {
+  width: 35vw;
+  margin: 2.5px 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+#product-search {
+  width: 100%;
+  display: flex;
+}
+#product-search input {
+  width: 30vw;
+  padding: 10px;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;    
+  border: 1px solid #ccc;
+}
+#search-icon {
+    font-size: 30px;
+    line-height: 38px;
+    border: 1px solid #ccc;
+    border-left: none;
+    padding: 0 8px;
+    color: #FC8207;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+.carousel-inner > .item > img{
+  height: 400px;
+}
+
+
+/*>>>>>>>>>>>>>>>>>>FORM<<<<<<<<<<<<<<<<<<<<*/
+.form-liq {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 1;
+  background: #FFFFFF;
+  max-width: 300px;
+  margin: 0 auto 100px;
+  padding: 30px;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+  border-bottom-left-radius: 3px;
+  border-bottom-right-radius: 3px;
+  text-align: center;
+
+  transform: translate(-50%, -50%);
+}
+.form-liq .thumbnail-liq-login {
+  background: #08C931;
+  width: 150px;
+  height: 150px;
+  margin: 0 auto 30px;
+  padding: 30px 30px;
+  border-top-left-radius: 100%;
+  border-top-right-radius: 100%;
+  border-bottom-left-radius: 100%;
+  border-bottom-right-radius: 100%;
+  box-sizing: border-box;
+}
+.form-liq .thumbnail-liq-signup {
+  background: #FC8207;
+  width: 150px;
+  height: 150px;
+  margin: 0 auto 30px;
+  padding: 30px 30px;
+  border-top-left-radius: 100%;
+  border-top-right-radius: 100%;
+  border-bottom-left-radius: 100%;
+  border-bottom-right-radius: 100%;
+  box-sizing: border-box;
+}
+.form-liq .thumbnail-liq-signup img {
+  display: block;
+  width: 100%;
+}
+.form-liq .thumbnail-liq-login img {
+  display: block;
+  width: 100%;
+}
+.form-liq input {
+  outline: 0;
+  background: #f2f2f2;
+  width: 100%;
+  border: 0;
+  margin: 0 0 15px;
+  padding: 15px;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+  border-bottom-left-radius: 3px;
+  border-bottom-right-radius: 3px;
+  box-sizing: border-box;
+  font-size: 14px;
+}
+.container-liq-radio{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin: 10px 0;
+  line-height: 30px;
+}
+.form-liq button {
+  outline: 0;
+  background: #08C931;
+  width: 100%;
+  border: 0;
+  padding: 15px;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+  border-bottom-left-radius: 3px;
+  border-bottom-right-radius: 3px;
+  color: #FFFFFF;
+  font-size: 14px;
+  transition: all 0.3 ease;
+  cursor: pointer;
+}
+.form-liq .login-btn {
+  background: #08C931;
+}
+.form-liq .signup-btn {
+  background: #FC8207;
+}
+.form-liq .message-login a {
+  margin: 15px 0 0;
+  color: #b3b3b3;
+  font-size: 12px;
+  color: #FC8207;
+  text-decoration: none;
+}
+.form-liq .message-signup a {
+  margin: 15px 0 0;
+  color: #b3b3b3;
+  font-size: 12px;
+  color: #08C931;
+  text-decoration: none;
+}
+
+.container-login {
+  position: relative;
+  z-index: 1;
+  max-width: 300px;
+  margin: 0 auto;
+}
+.container-login:before, .container-login:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+/*>>>>>>>>>>>>>>>>>PRODUCT SHOW<<<<<<<<<<<<<<<<<<*/
+.container-images {
+  width: 100%;
+  margin: 20px 40px;
+  padding-bottom: 10px 10px;
+}
+.buy-buttons {
+  text-align: center;
+}
+.buy-buttons a {
+  padding: 8px 13px;
+  border-radius: 4px;
+  margin-right: 7px;
+}
+
+.delivery-pin h4{
+  color: grey;
+}
+#form-pincode {
+  width: fit-content; 
+  margin-left: 20px;
+  border-bottom: 2px solid #2874f0;
+}
+#form-pincode input {
+  margin-left: 7px;
+  background: inherit;
+  border: none;
+  outline: none;
+}

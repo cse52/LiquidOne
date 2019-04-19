@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <title>LiquidOne</title>
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+      <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css">
+      <link rel="stylesheet" href="/stylesheets/main.css">
+  </head>
+  <body>
+  <nav class="navbar navbar-default" id="navbar-liquidOne">
+      <div class="container">
+          <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="/">LiquidOne</a>
+          </div>
+          <div id="navbar" class="collapse navbar-collapse">
+            <ul class="nav navbar-nav">
+              <li class="<%= typeof page !== 'undefined' && page === 'products' ? 'active' : '' %>">
+                <a href="/products" id="home-icon"><i class="fab fa-drupal"></i></a>
+              </li>
+              <li>
+                <a href="">Catogories</a>
+              </li>
+              <li>
+                <div class="container-product-search">
+                  <form action="/products" method="GET" class="" id="product-search">
+                    <input type="text" name="search" placeholder="Product search..." class="">
+                    <span id="search-icon"><i class="fab fa-searchengin"></i></span>
+                  </form>
+                </div>
+              </li>
+            </ul>
+            <ul class="nav navbar-nav">
+                <li><a href="/products/new" class="btn btn-warning"><i class="fab fa-usps"></i>  Sell</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <% if(!currentUser){ %>
+                    <li class="<%= typeof page !== 'undefined' && page === 'login' ? 'active' : '' %>"><a href="/login"><i class="fas fa-sign-in-alt log-button"></i>  Login</a></li>
+                <% } else { %>
+                    <li><a href="/logout"><i class="fas fa-sign-out-alt log-button"></i>  Logout</a></li>
+                <% } %>
+            </ul>
+          </div>
+      </div>
+  </nav>
+  
+  <div class="container">
+     <% if(error && error.length > 0) { %>
+       <div class="alert alert-danger" style="margin-top: 7px;"><p><%=error %></p></div>
+     <% } %>
+     
+     <% if(success && success.length > 0) { %>
+       <div class="alert alert-success" style="margin-top: 7px;"><p><%= success %></p></div>
+     <% } %>
+  </div>

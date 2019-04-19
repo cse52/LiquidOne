@@ -1,0 +1,117 @@
+<% include ../partials/header %>
+<div class="container-images">
+  <div class="row">
+    <div class="col-sm-5 col-xs-12">
+      <div class="thumbnail">
+        <img class="img-responsive" src="<%= product.image %>" style="height: 480px;">
+        <div class="caption-full">
+          <% if(currentUser && product.author.id.equals(currentUser._id) || currentUser && currentUser.isAdmin){ %>
+          <a class="btn btn-warning" href="/products/<%= product._id %>/edit">Edit</a>
+          <form action="/products/<%= product._id %>?_method=DELETE" method="POST" class="delete-form">
+            <button class="btn btn-danger">Delete</button>
+          </form>
+          <% } %>
+        </div>
+      </div>
+      <div class="buy-buttons">
+        <a href="" class="btn btn-warning btn-lg"><i class="fas fa-shopping-cart"></i>   ADD TO CART</a>
+        <a href="" class="btn btn-success btn-lg"><i class="fas fa-bolt"></i>   BUY NOW</a>
+      </div>
+    </div>
+    <div class="col-sm-6 col-xs-12">
+      <div class="well"> 
+        <h4 class="product-name small-green-text"><%=product.brand%></h4>
+        <h4 class="product-name"><%=product.name%></h4>
+        <h5 class="small-grey-text">41,274 Ratings & 7,636 Reviews</span>
+        <h5 class="small-green-text">Special price ends in 09h:13m:33s</span>
+        <h3> ₹ <%= product.cost %> <span class="small-green-text">17% off</span></h3>
+        <div class="container-liq">
+          <h4 style="color: grey;">Offers</h4>
+          <h5><i class="fas fa-star"></i> Special Price: Get extra 10% off (price inclusive of discount) | T&C</h5>
+          <h5><i class="fas fa-star"></i> Bank Offer: Extra 5% off* with Axis Bank Buzz Credit Card | T&C</h5>
+          <h5><i class="fas fa-star"></i> Bank Offer: 10% Instant Discount on Mastercard for First Online Payment | T&C</h5>
+          <h5><i class="fas fa-star"></i> Bank Offer: Extra 5% off* with Axis Bank Buzz Credit Card | T&C</h5>
+        </div>
+        <div class="container-liq delivery-pin">
+          <h4>Delivery</h4> 
+          <form id="form-pincode">
+            <i class="fas fa-map-marker-alt"></i>   
+            <input type="text" name="pincode" placeholder="Enter Delivery Pincode">
+            <a href="#">Check</a>
+          </form>
+        </div>
+        <div class="container-liq">
+          <h4 style="color: grey;">Sellers</h4>
+          <p>
+            <em><i class="far fa-check-circle"></i>  <%= product.author.username %></em>
+          </p>
+        </div>
+        <div class="container-liq">
+          <h4 style="color: grey;">Description</h4>
+          <p><i class="fas fa-info-circle"></i>  <%= product.description %></p>
+        </div>
+      </div>
+
+      <div class="well">
+        <div class="text-right">
+          <a class="btn btn-success" href="/products/<%= product._id %>/reviews/new">Add New Review</a>
+        </div>
+        <hr>
+        <% product.reviews.forEach(function(review){ %>
+          <div class="row">
+            <div class="col-md-12">
+              <strong><em><i class="far fa-user-circle"></i>  <%= review.author.username %></em></strong>
+              <span class="pull-right"><%= moment(review.createdAt).fromNow() %></span>
+              <div>
+                <%= review.text %> 
+
+                <% if(currentUser && review.author.id.equals(currentUser._id) || currentUser && currentUser.isAdmin){ %>
+                  <div class="pull-right">
+                    <a href="/products/<%=product._id%>/reviews/<%=review._id%>/edit" class="btn btn-xs btn-warning">EDIT</a>
+                    <form class="delete-form" action="/products/<%=product._id%>/reviews/<%=review._id%>?_method=DELETE" method="POST">
+                      <button class="btn btn-xs btn-danger">DELETE</button>
+                    </form>
+                  </div>
+                <% } %>
+                <hr>
+              </div>
+            </div>
+          </div>
+        <% }); %>
+        
+        <div class="row">
+          <div class="col-md-12">
+            <strong><em><i class="far fa-user-circle"></i> vikas</em></strong>
+            <span class="pull-right">1 hour ago</span>
+            <div>
+              i am very positive about it
+              <hr>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12">
+            <strong><i class="far fa-user-circle"></i>  rohit</em></strong>
+            <span class="pull-right">2 days ago</span>
+            <div>
+              I would highly sugest it.
+              <hr>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12">
+            <strong><em><i class="far fa-user-circle"></i>  aakash</em></strong>
+            <span class="pull-right">3 months ago</span>
+            <div>
+              coolest thing i ever got.. 
+              <hr>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+<% include ../partials/footer %>
